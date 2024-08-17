@@ -4,6 +4,7 @@
 // Components
 @import "components/header";
 @import "components/sidebar";
+@import "components/sidebar-nav";
 
 // Button toggle dashboard sidebar
 // <button type="button" data-dashboard-toggle-sidebar>Toggle</button>
@@ -28,7 +29,7 @@
             right: auto;
         }
 
-        .dashboard-sidebar-back {
+        [data-dashboard-sidebar-back] {
             display: block;
         }
     }
@@ -50,7 +51,7 @@
 
     body.hide-dashboard-sidebar {
         .dashboard-sidebar {
-            left: -var(--ds-dashboard-sidebar-width);
+            left: calc(var(--ds-dashboard-sidebar-width) * -1);
         }
 
         .dashboard-header {

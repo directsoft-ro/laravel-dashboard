@@ -16,7 +16,7 @@ export default class DashboardSidebar {
             });
         }
 
-        const appSidebarBackEl = document.querySelector(".dashboard-sidebar-back");
+        const appSidebarBackEl = document.querySelector("[data-dashboard-sidebar-back]");
         if (appSidebarBackEl) {
             appSidebarBackEl.addEventListener("click", function () {
                 document.body.classList.remove("show-dashboard-sidebar");

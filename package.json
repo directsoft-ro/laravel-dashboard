@@ -7,6 +7,7 @@
     },
     "scripts": {
         "watch": "npx mix watch",
+        "production": "npx mix --production",
         "prod": "npx mix --production"
     },
     "keywords": [],

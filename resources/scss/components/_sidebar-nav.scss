@@ -1,0 +1,105 @@
+@import "../variables";
+@import "../mixins";
+
+@mixin dashboard-sidebar-item-active() {
+    color: var(--ds-sidebar-nav-active-color);
+    background-color: var(--ds-sidebar-nav-active-bg);
+}
+
+.dashboard-sidebar-menu {
+    @include reset-list();
+
+    font-size: var(--ds-sidebar-font-size);
+    color: var(--ds-sidebar-color);
+
+    a {
+        color: var(--ds-sidebar-nav-color);
+        text-decoration: none;
+    }
+
+    a:hover {
+        @include dashboard-sidebar-item-active();
+    }
+
+    li.active>a {
+        @include dashboard-sidebar-item-active();
+    }
+}
+
+.dashboard-sidebar-menu>li {
+    padding: 0.2rem 0.6rem;
+
+    &>a {
+        display: block;
+        padding: 0.68rem var(--ds-sidebar-padding-x);
+        border-radius: 0.375rem;
+    }
+
+    &>a .dashboard-sidebar-icon {
+        width: 1.25rem;
+
+        svg {
+            max-width: 100%;
+            fill: var(--ds-sidebar-nav-color);
+        }
+    }
+}
+
+.dashboard-sidebar-menu>li:has(ul) {
+    &.active>a:not(:hover) {
+        background: none;
+    }
+
+    &>a>.dashboard-sidebar-submenu-icons {
+
+        & > svg {
+            fill: var(--ds-sidebar-nav-color);
+        }
+
+        .dashboard-sidebar-submenu-icon-up,
+        .dashboard-sidebar-submenu-icon-right {
+            display: none;
+            width: 1rem;
+            opacity: 0.8;
+        }
+    }
+
+    &>a>.dashboard-sidebar-submenu-icons .dashboard-sidebar-submenu-icon-up {
+        display: none;
+    }
+
+    &>a>.dashboard-sidebar-submenu-icons .dashboard-sidebar-submenu-icon-right {
+        display: block;
+    }
+
+    &.active>a>.dashboard-sidebar-submenu-icons .dashboard-sidebar-submenu-icon-up {
+        display: block;
+    }
+
+    &.active>a>.dashboard-sidebar-submenu-icons .dashboard-sidebar-submenu-icon-right {
+        display: none;
+    }
+
+    &>ul {
+        @include reset-list();
+        display: none;
+    }
+
+    &>ul>li {
+        padding: 0.2rem 0;
+    }
+
+    &.active>ul {
+        display: block;
+    }
+
+    &>ul>li>a {
+        display: block;
+        border-radius: 0.375rem;
+        padding: 0.68rem var(--ds-sidebar-padding-x) 0.68rem calc(var(--ds-sidebar-padding-x) + 1rem);
+    }
+
+    &>ul>li>a .dashboard-sidebar-icon {
+        width: 1rem;
+    }
+}

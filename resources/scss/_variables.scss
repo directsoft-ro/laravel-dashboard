@@ -3,22 +3,29 @@
 $white: white;
 $black: black;
 
+// Typography
+// =======================================
+$font-family-sans-serif: "Inter", sans-serif;
+$font-size-base: 0.9rem;
+
 // Posible values: 2.0 | 3 | 4.5 | 7
 $min-contrast-ratio: 2;
 
 // App header
 // =======================================
-$dashboard-header-height: 60px;
-$dashboard-header-transition-speed: 500ms;
-$dashboard-header-border-color: darken($white, 20%);
+$ds-header-height: 60px;
+$ds-header-bg: $white;
+$ds-header-border-color: darken($white, 20%);
 
 // App sidebar
 // =======================================
-$dashboard-sidebar-width: 240px;
-$dashboard-sidebar-bg: darken(#3b4051, 8%);
-$dashboard-sidebar-transition-speed: 500ms;
-$dashboard-sidebar-border-color: lighten($dashboard-sidebar-bg, 5%);
-$dashboard-sidebar-left: -$dashboard-sidebar-width;
+$ds-sidebar-width: 260px;
+$ds-sidebar-bg: #0f172a;
+$ds-sidebar-color: $white;
+$ds-sidebar-padding-x: 1rem;
+$ds-sidebar-transition-speed: 500ms;
+$ds-sidebar-border-color: lighten($ds-sidebar-bg, 5%);
+$ds-sidebar-back-bg: rgba($ds-sidebar-bg, 0.3);
 
 :root {
     --ds-white: #{$white};
@@ -27,16 +34,23 @@ $dashboard-sidebar-left: -$dashboard-sidebar-width;
 
     // App header
     // =======================================
-    --ds-dashboard-header-height: #{$dashboard-header-height};
-    --ds-dashboard-header-bg: #{$white};
-    --ds-dashboard-header-border-color: #{$dashboard-header-border-color};
-    --ds-dashboard-header-transition-speed: #{$dashboard-header-transition-speed};
+    --ds-header-height: #{$ds-header-height};
+    --ds-header-bg: #{$ds-header-bg};
+    --ds-header-border-color: #{$ds-header-border-color};
 
     // App sidebar
     // =======================================
-    --ds-dashboard-sidebar-width: #{$dashboard-sidebar-width};
-    --ds-dashboard-sidebar-bg: #{$dashboard-sidebar-bg};
-    --ds-dashboard-sidebar-transition-speed: #{$dashboard-sidebar-transition-speed};
-    --ds-dashboard-sidebar-border-color: #{$dashboard-sidebar-border-color};
-    --ds-dashboard-sidebar-left: #{$dashboard-sidebar-left};
+    --ds-sidebar-font-size: 0.9rem;
+    --ds-sidebar-width: #{$ds-sidebar-width};
+    --ds-sidebar-bg: #{$ds-sidebar-bg};
+    --ds-sidebar-color: #{$ds-sidebar-color};
+    --ds-sidebar-padding-x: #{$ds-sidebar-padding-x};
+    --ds-sidebar-border-color: #{$ds-sidebar-border-color};
+    --ds-sidebar-back-bg: #{$ds-sidebar-back-bg};
+
+    // App sidebar navigation
+    // =======================================
+    --ds-sidebar-nav-color: rgba(255, 255, 255, 0.7);
+    --ds-sidebar-nav-active-color: var(--ds-white);
+    --ds-sidebar-nav-active-bg: rgba(255, 255, 255, 0.12);
 }

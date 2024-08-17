@@ -83,7 +83,7 @@ Menu item with icon
 
 ```blade
 <x-dashboard::sidebar-nav>
-    <x-dashboard::sidebar-nav-item href="/" :active="request()->routeIs('home')">
+    <x-dashboard::sidebar-nav-item href="{{ route('home') }}" :active="request()->routeIs('home')">
         <x-slot:icon>
             <!-- Your SVG icon -->
         </x-slot:icon>
@@ -96,12 +96,15 @@ Menu item with submenu
 
 ```blade
 <x-dashboard::sidebar-nav>
-    <x-dashboard::sidebar-nav-item href="/settings" :active="request()->routeIs('settings.*')">
+    <x-dashboard::sidebar-nav-item href="#" :active="request()->routeIs('users.*', 'locations.*')">
         {{ __('Settings') }}
 
         <x-slot:items>
             <x-dashboard::sidebar-nav-item href="{{ route('users.index') }}" :active="request()->routeIs('users.*')">
                 {{ __('Users') }}
+            </x-dashboard::sidebar-nav-item>
+            <x-dashboard::sidebar-nav-item href="{{ route('locations.index') }}" :active="request()->routeIs('locations.*')">
+                {{ __('Locations') }}
             </x-dashboard::sidebar-nav-item>
         </x-slot:items>
     </x-dashboard::sidebar-nav-item>
@@ -113,16 +116,22 @@ Menu item with submenu
 ```css
 :root {
     /* App Header */
-    --ds-dashboard-header-height: 60px;
-    --ds-dashboard-header-bg: #fff;
-    --ds-dashboard-header-border-color: #ccc;
-    --ds-dashboard-header-transition-speed: 500ms;
+    --ds-white: #fff;
+    --ds-black: #000;
+    --ds-header-height: 60px;
+    --ds-header-bg: #fff;
+    --ds-header-border-color: #ccc;
 
     /* App Sidebar */
-    --ds-dashboard-sidebar-width: 240px;
-    --ds-dashboard-sidebar-bg: #2a2d39;
-    --ds-dashboard-sidebar-transition-speed: 500ms;
-    --ds-dashboard-sidebar-border-color: #353948;
-    --ds-dashboard-sidebar-left: -240px;
+    --ds-sidebar-font-size: 0.9rem;
+    --ds-sidebar-width: 260px;
+    --ds-sidebar-bg: #0f172a;
+    --ds-sidebar-color: #fff;
+    --ds-sidebar-padding-x: 1rem;
+    --ds-sidebar-border-color: #16213d;
+    --ds-sidebar-back-bg: rgba(15,23,42,.3);
+    --ds-sidebar-nav-color: hsla(0,0%,100%,.7);
+    --ds-sidebar-nav-active-color: var(--ds-white);
+    --ds-sidebar-nav-active-bg: hsla(0,0%,100%,.12);
 }
 ```
