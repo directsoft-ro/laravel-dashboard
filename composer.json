@@ -1,0 +1,27 @@
+{
+    "name": "directsoft/laravel-dashboard",
+    "autoload": {
+        "psr-4": {
+            "Directsoft\\Laravel\\Dashboard\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Ivan Stoianov",
+            "email": "ivan.stoianov@directsoft.ro"
+        }
+    ],
+    "require": {
+        "php": "^8.2",
+        "illuminate/support": "^10.0|^11.0"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Directsoft\\Laravel\\Dashboard\\DashboardServiceProvider"
+            ]
+        }
+    }
+}

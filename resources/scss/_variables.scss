@@ -1,0 +1,42 @@
+// Colors
+// =======================================
+$white: white;
+$black: black;
+
+// Posible values: 2.0 | 3 | 4.5 | 7
+$min-contrast-ratio: 2;
+
+// App header
+// =======================================
+$dashboard-header-height: 60px;
+$dashboard-header-transition-speed: 500ms;
+$dashboard-header-border-color: darken($white, 20%);
+
+// App sidebar
+// =======================================
+$dashboard-sidebar-width: 240px;
+$dashboard-sidebar-bg: darken(#3b4051, 8%);
+$dashboard-sidebar-transition-speed: 500ms;
+$dashboard-sidebar-border-color: lighten($dashboard-sidebar-bg, 5%);
+$dashboard-sidebar-left: -$dashboard-sidebar-width;
+
+:root {
+    --ds-white: #{$white};
+    --ds-black: #{$black};
+
+
+    // App header
+    // =======================================
+    --ds-dashboard-header-height: #{$dashboard-header-height};
+    --ds-dashboard-header-bg: #{$white};
+    --ds-dashboard-header-border-color: #{$dashboard-header-border-color};
+    --ds-dashboard-header-transition-speed: #{$dashboard-header-transition-speed};
+
+    // App sidebar
+    // =======================================
+    --ds-dashboard-sidebar-width: #{$dashboard-sidebar-width};
+    --ds-dashboard-sidebar-bg: #{$dashboard-sidebar-bg};
+    --ds-dashboard-sidebar-transition-speed: #{$dashboard-sidebar-transition-speed};
+    --ds-dashboard-sidebar-border-color: #{$dashboard-sidebar-border-color};
+    --ds-dashboard-sidebar-left: #{$dashboard-sidebar-left};
+}

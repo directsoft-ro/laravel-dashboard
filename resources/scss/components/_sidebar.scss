@@ -1,0 +1,131 @@
+@import "../variables";
+
+.dashboard-sidebar {
+    position: fixed;
+    width: var(--ds-dashboard-sidebar-width);
+    background-color: var(--ds-dashboard-sidebar-bg);
+    inset: 0 auto 0 0;
+    z-index: 20;
+    left: var(--ds-dashboard-sidebar-left);
+    color: var(--ds-white);
+    display: flex;
+    flex-direction: column;
+}
+
+.dashboard-sidebar-header {
+    height: var(--ds-dashboard-header-height);
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid var(--ds-dashboard-sidebar-border-color);
+    padding: 0 var(--bs-container-padding-x);
+
+    a {
+        color: $white;
+        text-decoration: none;
+    }
+
+    img {
+        max-width: 80%;
+        max-height: calc(#{$dashboard-header-height} - 1rem);
+    }
+}
+
+.dashboard-sidebar-body {
+    flex: 1;
+    overflow-y: auto;
+}
+
+.dashboard-sidebar-logo {
+    text-decoration: none;
+    color: $white;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.dashboard-sidebar-back {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background-color: rgba($dashboard-sidebar-bg, 0.3);
+    z-index: 10;
+}
+
+.dashboard-sidebar-menu {
+    margin: 0;
+    padding: 0;
+    font-size: 0.92rem;
+
+    a {
+        color: $white;
+        text-decoration: none;
+    }
+
+    a.active {
+        background-color: darken($dashboard-sidebar-bg, 1.5%);
+    }
+
+    svg {
+        fill: $white;
+    }
+}
+
+.dashboard-sidebar-menu>li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.dashboard-sidebar-menu>li>a {
+    display: block;
+    padding: 1rem $container-padding-x;
+}
+
+.dashboard-sidebar-menu>li>a {
+    border-bottom: 1px solid $dashboard-sidebar-border-color;
+}
+
+.dashboard-sidebar-menu>li>a .dashboard-sidebar-icon {
+    width: 1.25rem;
+}
+
+.dashboard-sidebar-menu>li:has(ul) {
+    ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        display: none;
+    }
+
+    &.active ul {
+        display: block;
+    }
+
+    .dashboard-sidebar-icon-up {
+        display: none;
+        fill: $white;
+    }
+
+    .dashboard-sidebar-icon-down {
+        display: block;
+        fill: $white;
+    }
+
+    &.active a {
+        .dashboard-sidebar-icon-up {
+            display: block;
+        }
+
+        .dashboard-sidebar-icon-down {
+            display: none;
+        }
+    }
+
+    ul>li>a {
+        display: block;
+        padding: 1rem $container-padding-x 1rem $container-padding-x + 1rem;
+    }
+
+    ul>li>a .dashboard-sidebar-icon {
+        width: 1rem;
+    }
+}

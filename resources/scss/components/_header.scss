@@ -1,0 +1,14 @@
+@import "../variables";
+
+.dashboard-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    height: var(--ds-dashboard-header-height);
+    background-color: var(--ds-dashboard-header-bg);
+    border-bottom: 1px solid var(--ds-dashboard-header-border-color);
+    display: flex;
+    align-items: center;
+}
