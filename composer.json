@@ -1,5 +1,7 @@
 {
     "name": "directsoft/laravel-dashboard",
+    "description": "Laravel dashboard UI with bootstrap 5 and font awesome",
+    "license": "MIT",
     "autoload": {
         "psr-4": {
             "Directsoft\\Laravel\\Dashboard\\": "src/"
