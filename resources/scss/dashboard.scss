@@ -19,7 +19,7 @@
 }
 
 .dashboard-main-content {
-    margin-top: var(--ds-dashboard-header-height);
+    margin-top: var(--ds-header-height);
 }
 
 @include media-breakpoint-down(xl) {
@@ -41,17 +41,17 @@
     }
 
     .dashboard-header {
-        margin-left: var(--ds-dashboard-sidebar-width);
+        margin-left: var(--ds-sidebar-width);
     }
 
     .dashboard-main-content {
-        margin-top: var(--ds-dashboard-header-height);
-        margin-left: var(--ds-dashboard-sidebar-width);
+        margin-top: var(--ds-header-height);
+        margin-left: var(--ds-sidebar-width);
     }
 
     body.hide-dashboard-sidebar {
         .dashboard-sidebar {
-            left: calc(var(--ds-dashboard-sidebar-width) * -1);
+            left: calc(var(--ds-sidebar-width) * -1);
         }
 
         .dashboard-header {

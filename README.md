@@ -1,5 +1,7 @@
 # Laravel Dashboard
 
+Bootstrap 5 + Font Awesome 6
+
 - [Installation](#installation)
 - [Basic layout](#layout)
 - [Sidebar component](#sidebar-component)
