@@ -12,3 +12,15 @@
     display: flex;
     align-items: center;
 }
+
+.dashboard-header .dropdown {
+    .dropdown-toggle {
+        &:after {
+            display: none;
+        }
+    }
+
+    .dropdown-menu {
+        width: var(--ds-header-dropdown-menu-width);
+    }
+}

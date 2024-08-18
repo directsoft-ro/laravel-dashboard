@@ -32,13 +32,14 @@ $ds-sidebar-back-bg: rgba($ds-sidebar-bg, 0.3);
     --ds-black: #{$black};
 
 
-    // App header
+    // Header
     // =======================================
     --ds-header-height: #{$ds-header-height};
     --ds-header-bg: #{$ds-header-bg};
     --ds-header-border-color: #{$ds-header-border-color};
+    --ds-header-dropdown-menu-width: 280px;
 
-    // App sidebar
+    // Sidebar
     // =======================================
     --ds-sidebar-font-size: 0.9rem;
     --ds-sidebar-width: #{$ds-sidebar-width};
@@ -48,7 +49,7 @@ $ds-sidebar-back-bg: rgba($ds-sidebar-bg, 0.3);
     --ds-sidebar-header-border-bottom-color: #{$ds-sidebar-header-border-bottom-color};
     --ds-sidebar-back-bg: #{$ds-sidebar-back-bg};
 
-    // App sidebar navigation
+    // Sidebar navigation
     // =======================================
     --ds-sidebar-nav-color: rgba(255, 255, 255, 0.7);
     --ds-sidebar-nav-active-color: var(--ds-white);

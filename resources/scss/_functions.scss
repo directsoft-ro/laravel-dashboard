@@ -1,0 +1,11 @@
+@import "variables";
+
+@function range($start, $end, $step: 1) {
+    $values: ();
+
+    @for $i from $start through $end {
+        $values: append($values, $i);
+    }
+
+    @return $values;
+}

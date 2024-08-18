@@ -18,6 +18,9 @@ $fa-font-path: "../webfonts";
 @import "@fortawesome/fontawesome-free/scss/solid.scss";
 @import "@fortawesome/fontawesome-free/scss/v4-shims.scss";
 
+// Helpers
+@import "helpers";
+
 // Components
 @import "components/header";
 @import "components/sidebar";
