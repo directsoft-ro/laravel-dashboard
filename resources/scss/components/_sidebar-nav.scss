@@ -36,7 +36,7 @@
     }
 
     &>a .dashboard-sidebar-icon {
-        width: 1.25rem;
+        width: var(--ds-sidebar-nav-icon-width);
 
         svg {
             max-width: 100%;
@@ -50,9 +50,13 @@
         background: none;
     }
 
+    &>a {
+        margin-bottom: 0.2rem;
+    }
+
     &>a>.dashboard-sidebar-submenu-icons {
 
-        & > svg {
+        &>svg {
             fill: var(--ds-sidebar-nav-color);
         }
 
@@ -96,10 +100,10 @@
     &>ul>li>a {
         display: block;
         border-radius: 0.375rem;
-        padding: 0.68rem var(--ds-sidebar-padding-x) 0.68rem calc(var(--ds-sidebar-padding-x) + 1rem);
+        padding: 0.68rem var(--ds-sidebar-padding-x) 0.68rem calc(var(--ds-sidebar-padding-x) + var(--ds-sidebar-nav-icon-width));
     }
 
     &>ul>li>a .dashboard-sidebar-icon {
-        width: 1rem;
+        display: none;
     }
 }

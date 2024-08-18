@@ -16,7 +16,7 @@
     height: var(--ds-header-height);
     display: flex;
     align-items: center;
-    border-bottom: 1px solid var(--ds-sidebar-border-color);
+    border-bottom: 1px solid var(--ds-sidebar-header-border-bottom-color);
     padding: 0 var(--ds-sidebar-padding-x);
 
     a {

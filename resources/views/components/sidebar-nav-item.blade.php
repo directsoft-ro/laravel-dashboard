@@ -8,7 +8,7 @@
     <a href="{{ $href }}" class="d-flex align-items-center justify-content-between {{ $linkClass ? ' ' . $linkClass : '' }}">
         <span class="d-flex align-items-center">
             @isset($icon)
-                <span class="dashboard-sidebar-icon me-2">
+                <span class="dashboard-sidebar-icon">
                     {{ $icon }}
                 </span>
             @endisset

@@ -15,7 +15,7 @@ $min-contrast-ratio: 2;
 // =======================================
 $ds-header-height: 60px;
 $ds-header-bg: $white;
-$ds-header-border-color: darken($white, 20%);
+$ds-header-border-color: darken($white, 8%);
 
 // App sidebar
 // =======================================
@@ -24,7 +24,7 @@ $ds-sidebar-bg: #0f172a;
 $ds-sidebar-color: $white;
 $ds-sidebar-padding-x: 1rem;
 $ds-sidebar-transition-speed: 500ms;
-$ds-sidebar-border-color: lighten($ds-sidebar-bg, 5%);
+$ds-sidebar-header-border-bottom-color: rgba(invert($ds-sidebar-bg, 100%), 0.1);
 $ds-sidebar-back-bg: rgba($ds-sidebar-bg, 0.3);
 
 :root {
@@ -45,7 +45,7 @@ $ds-sidebar-back-bg: rgba($ds-sidebar-bg, 0.3);
     --ds-sidebar-bg: #{$ds-sidebar-bg};
     --ds-sidebar-color: #{$ds-sidebar-color};
     --ds-sidebar-padding-x: #{$ds-sidebar-padding-x};
-    --ds-sidebar-border-color: #{$ds-sidebar-border-color};
+    --ds-sidebar-header-border-bottom-color: #{$ds-sidebar-header-border-bottom-color};
     --ds-sidebar-back-bg: #{$ds-sidebar-back-bg};
 
     // App sidebar navigation
@@ -53,4 +53,5 @@ $ds-sidebar-back-bg: rgba($ds-sidebar-bg, 0.3);
     --ds-sidebar-nav-color: rgba(255, 255, 255, 0.7);
     --ds-sidebar-nav-active-color: var(--ds-white);
     --ds-sidebar-nav-active-bg: rgba(255, 255, 255, 0.12);
+    --ds-sidebar-nav-icon-width: 25px;
 }
