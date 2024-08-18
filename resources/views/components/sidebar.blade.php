@@ -4,9 +4,11 @@
             {{ $header }}
         @endif
     </div>
-    {{ $slot }}
+    <div class="dashboard-sidebar-body">
+        {{ $slot }}
+    </div>
 </aside>
 
-@push('footer')
-    <div class="dashboard-sidebar-back"></div>
+@push('dashboard_footer')
+    <div data-dashboard-sidebar-back></div>
 @endpush

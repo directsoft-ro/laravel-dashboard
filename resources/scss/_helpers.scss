@@ -1,0 +1,17 @@
+@import "variables";
+@import "functions";
+@import "mixins";
+
+// Generate w-?-px helper classes
+@each $width in range(20, 100, 5) {
+    .w-#{$width}-px {
+        width: #{$width}px !important;
+    }
+}
+
+// Generate h-?-px helper classes
+@each $height in range(20, 100, 5) {
+    .h-#{$height}-px {
+        height: #{$height}px !important;
+    }
+}

@@ -1,9 +1,30 @@
 @import "variables";
+
+// Inter font
+// ====================================
+$inter-font-path: "../webfonts";
+@import "inter-font";
+
+// Bootstrap 5
+// ====================================
 @import "bootstrap/scss/bootstrap";
+
+// Font awesome
+// ====================================
+$fa-font-path: "../webfonts";
+@import "@fortawesome/fontawesome-free/scss/fontawesome.scss";
+@import "@fortawesome/fontawesome-free/scss/brands.scss";
+@import "@fortawesome/fontawesome-free/scss/regular.scss";
+@import "@fortawesome/fontawesome-free/scss/solid.scss";
+@import "@fortawesome/fontawesome-free/scss/v4-shims.scss";
+
+// Helpers
+@import "helpers";
 
 // Components
 @import "components/header";
 @import "components/sidebar";
+@import "components/sidebar-nav";
 
 // Button toggle dashboard sidebar
 // <button type="button" data-dashboard-toggle-sidebar>Toggle</button>
@@ -18,7 +39,7 @@
 }
 
 .dashboard-main-content {
-    margin-top: var(--ds-dashboard-header-height);
+    margin-top: var(--ds-header-height);
 }
 
 @include media-breakpoint-down(xl) {
@@ -28,7 +49,7 @@
             right: auto;
         }
 
-        .dashboard-sidebar-back {
+        [data-dashboard-sidebar-back] {
             display: block;
         }
     }
@@ -40,17 +61,17 @@
     }
 
     .dashboard-header {
-        margin-left: var(--ds-dashboard-sidebar-width);
+        margin-left: var(--ds-sidebar-width);
     }
 
     .dashboard-main-content {
-        margin-top: var(--ds-dashboard-header-height);
-        margin-left: var(--ds-dashboard-sidebar-width);
+        margin-top: var(--ds-header-height);
+        margin-left: var(--ds-sidebar-width);
     }
 
     body.hide-dashboard-sidebar {
         .dashboard-sidebar {
-            left: -var(--ds-dashboard-sidebar-width);
+            left: calc(var(--ds-sidebar-width) * -1);
         }
 
         .dashboard-header {

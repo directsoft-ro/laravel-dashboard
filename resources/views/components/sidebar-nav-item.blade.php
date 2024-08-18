@@ -4,20 +4,20 @@
     'classActive' => 'active',
     'linkClass' => null,
 ])
-<li {{ $attributes->class(['dashboard-sidebar-menu', 'active' => $active]) }}>
-    <a href="{{ $href }}" class="d-flex align-items-center justify-content-between {{ $active ? $classActive : '' }}{{ $linkClass ? ' ' . $linkClass : '' }}">
+<li {{ $attributes->class(['dashboard-sidebar-menu', $classActive => $active]) }}>
+    <a href="{{ $href }}" class="d-flex align-items-center justify-content-between {{ $linkClass ? ' ' . $linkClass : '' }}">
         <span class="d-flex align-items-center">
             @isset($icon)
-                <span class="dashboard-sidebar-icon me-2">
+                <span class="dashboard-sidebar-icon">
                     {{ $icon }}
                 </span>
             @endisset
             {{ $slot }}
         </span>
         @isset($items)
-            <span>
-                <x-dashboard::icons.caret-up width="14" class="opacity-50 dashboard-sidebar-icon-up" />
-                <x-dashboard::icons.caret-down width=14 class="opacity-50 dashboard-sidebar-icon-down" />
+            <span class="dashboard-sidebar-submenu-icons">
+                <i class="fa-solid fa-caret-up dashboard-sidebar-submenu-icon-up"></i>
+                <i class="fa-solid fa-caret-right dashboard-sidebar-submenu-icon-right"></i>
             </span>
         @endisset
     </a>
