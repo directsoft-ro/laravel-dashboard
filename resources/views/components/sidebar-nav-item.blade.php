@@ -16,8 +16,8 @@
         </span>
         @isset($items)
             <span class="dashboard-sidebar-submenu-icons">
-                <x-dashboard::icons.caret-up class="dashboard-sidebar-submenu-icon-up" />
-                <x-dashboard::icons.caret-right class="dashboard-sidebar-submenu-icon-right" />
+                <i class="fa-solid fa-caret-up dashboard-sidebar-submenu-icon-up"></i>
+                <i class="fa-solid fa-caret-right dashboard-sidebar-submenu-icon-right"></i>
             </span>
         @endisset
     </a>

@@ -3,7 +3,7 @@
         <div class="row align-items-center">
             <div class="col-auto">
                 <button type="button" data-dashboard-toggle-sidebar>
-                    <x-dashboard::icons.align-left width="14" />
+                    <i class="fa-solid fa-bars text-muted opacity-75"></i>
                 </button>
             </div>
             <div class="col">
