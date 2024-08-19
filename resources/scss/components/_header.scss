@@ -11,6 +11,9 @@
     border-bottom: 1px solid var(--ds-header-border-color);
     display: flex;
     align-items: center;
+    justify-content: space-between;
+    padding-left: 1rem;
+    padding-right: 1rem;
 }
 
 .dashboard-header .dropdown {

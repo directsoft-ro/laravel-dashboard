@@ -1,23 +1,5 @@
 @import "variables";
 
-// Inter font
-// ====================================
-$inter-font-path: "../webfonts";
-@import "inter-font";
-
-// Bootstrap 5
-// ====================================
-@import "bootstrap/scss/bootstrap";
-
-// Font awesome
-// ====================================
-$fa-font-path: "../webfonts";
-@import "@fortawesome/fontawesome-free/scss/fontawesome.scss";
-@import "@fortawesome/fontawesome-free/scss/brands.scss";
-@import "@fortawesome/fontawesome-free/scss/regular.scss";
-@import "@fortawesome/fontawesome-free/scss/solid.scss";
-@import "@fortawesome/fontawesome-free/scss/v4-shims.scss";
-
 // Helpers
 @import "helpers";
 
@@ -36,13 +18,18 @@ $fa-font-path: "../webfonts";
     cursor: pointer;
     font-size: inherit;
     font-family: inherit;
+    color: var(--ds-sidebar-button-toggle-color);
+
+    svg {
+        fill: var(--ds-sidebar-button-toggle-color);
+    }
 }
 
 .dashboard-main-content {
     margin-top: var(--ds-header-height);
 }
 
-@include media-breakpoint-down(xl) {
+@media (max-width: 1200px) {
     body.show-dashboard-sidebar {
         .dashboard-sidebar {
             left: 0;
@@ -55,7 +42,7 @@ $fa-font-path: "../webfonts";
     }
 }
 
-@include media-breakpoint-up(xl) {
+@media (min-width: 1200px) {
     .dashboard-sidebar {
         left: 0;
     }

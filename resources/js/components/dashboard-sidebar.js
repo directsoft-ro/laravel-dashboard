@@ -1,38 +1,148 @@
 export default class DashboardSidebar {
+    constructor(config = {}) {
+        this.options = {
+            sidebarSelector: ".dashboard-sidebar",
+            toggleSidebarButtonSelector: "[data-dashboard-toggle-sidebar]",
+            backSidebarElementSelector: "[data-dashboard-sidebar-back]",
+            classNameDesktopToHide: "hide-dashboard-sidebar",
+            classNameMobileToShow: "show-dashboard-sidebar",
+            submenuItemLinksSelector: ".dashboard-sidebar-menu li:has(ul) > a",
+            desktopBreakpoint: 1200,
+            ...config,
+        };
+    }
+
     init() {
-        const btnToggleAppSidebarEl = document.querySelector("[data-dashboard-toggle-sidebar]");
-        if (btnToggleAppSidebarEl) {
-            btnToggleAppSidebarEl.addEventListener("click", async () => {
-                if (window.innerWidth >= 1200) {
-                    document.body.classList.toggle("hide-dashboard-sidebar");
-                    if (document.body.classList.contains("hide-dashboard-sidebar")) {
-                        // Hide sidebar
-                    } else {
-                        // Hide sidebar
-                    }
-                } else {
-                    document.body.classList.toggle("show-dashboard-sidebar");
-                }
-            });
+        this.initButtonToggleSidebar(this.options.toggleSidebarButtonSelector);
+        this.initBack(this.options.backSidebarElementSelector);
+        this.initSubmenuItems();
+    }
+
+    initButtonToggleSidebar(selector) {
+        const button = document.querySelector(selector);
+        if (!button) {
+            return;
         }
 
-        const appSidebarBackEl = document.querySelector("[data-dashboard-sidebar-back]");
-        if (appSidebarBackEl) {
-            appSidebarBackEl.addEventListener("click", function () {
-                document.body.classList.remove("show-dashboard-sidebar");
-            });
+        button.addEventListener("click", async () => {
+            this.toggle();
+        });
+    }
+
+    initBack(selector) {
+        const element = document.querySelector(selector);
+        if (!element) {
+            return;
         }
 
-        const submenuItems = document.querySelectorAll(
-            ".dashboard-sidebar-menu li:has(ul)",
-        );
+        element.addEventListener("click", () => {
+            this.hide();
+        });
+    }
 
-        Array.from(submenuItems).forEach((submenuItem) => {
-            const anchor = submenuItem.querySelector("a");
+    initSubmenuItems() {
+        const submenuItems = Array.from(document.querySelectorAll(this.options.submenuItemLinksSelector));
+        if (!submenuItems.length) {
+            return;
+        }
+
+        submenuItems.forEach((anchor) => {
             anchor.addEventListener("click", (e) => {
                 e.preventDefault();
-                submenuItem.classList.toggle("active");
+                anchor.parentNode.classList.toggle("active");
             });
         });
+    }
+
+    isDesktop() {
+        return window.innerWidth >= this.options.desktopBreakpoint;
+    }
+
+    dispatchShowEvent() {
+        const sidebarElement = document.querySelector(this.options.sidebarSelector);
+
+        if (!sidebarElement) {
+            return;
+        }
+
+        sidebarElement.dispatchEvent(new Event("show"));
+    }
+
+    dispatchHideEvent() {
+        const sidebarElement = document.querySelector(this.options.sidebarSelector);
+
+        if (!sidebarElement) {
+            return;
+        }
+
+        sidebarElement.dispatchEvent(new Event("hide"));
+    }
+
+    isHidden() {
+        if (this.isDesktop()) {
+            return document.body.classList.contains(this.options.classNameDesktopToHide);
+        }
+
+        return !document.body.classList.contains(this.options.classNameMobileToShow);
+    }
+
+    isShown() {
+        if (this.isDesktop()) {
+            return !document.body.classList.contains(this.options.classNameDesktopToHide);
+        }
+
+        return document.body.classList.contains(this.options.classNameMobileToShow);
+    }
+
+    show() {
+        // Desktop viewport
+        if (this.isDesktop()) {
+            if (document.body.classList.contains(this.options.classNameDesktopToHide)) {
+                document.body.classList.remove(this.options.classNameDesktopToHide);
+                this.dispatchShowEvent();
+                return;
+            }
+
+            return;
+        }
+
+        if (document.body.classList.contains(this.options.classNameMobileToShow)) {
+            return;
+        }
+
+        // Mobile viewport
+        document.body.classList.add(this.options.classNameMobileToShow);
+        this.dispatchShowEvent();
+
+        return;
+    }
+
+    hide() {
+        // Desktop viewport
+        if (this.isDesktop()) {
+            if (!document.body.classList.contains(this.options.classNameDesktopToHide)) {
+                document.body.classList.add(this.options.classNameDesktopToHide);
+                this.dispatchHideEvent();
+                return;
+            }
+        }
+
+        // Mobile viewport
+        if (document.body.classList.contains(this.options.classNameMobileToShow)) {
+            document.body.classList.remove(this.options.classNameMobileToShow);
+            this.dispatchHideEvent();
+        }
+
+        return;
+    }
+
+    toggle() {
+        if (this.isHidden()) {
+            this.show();
+            return;
+        }
+
+        this.hide();
+        return;
     }
 }

@@ -26,6 +26,17 @@
     }
 }
 
+.dashboard-sidebar-menu .dashboard-sidebar-nav-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.dashboard-sidebar-menu .dashboard-sidebar-item-content {
+    display: flex;
+    align-items: center;
+}
+
 .dashboard-sidebar-menu>li {
     padding: 0.2rem 0.6rem;
 
@@ -56,15 +67,16 @@
 
     &>a>.dashboard-sidebar-submenu-icons {
 
-        &>svg {
-            fill: var(--ds-sidebar-nav-color);
-        }
 
         .dashboard-sidebar-submenu-icon-up,
         .dashboard-sidebar-submenu-icon-right {
             display: none;
             width: 1rem;
             opacity: 0.8;
+
+            & svg {
+                fill: var(--ds-sidebar-nav-color);
+            }
         }
     }
 

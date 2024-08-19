@@ -9,6 +9,4 @@
     </div>
 </aside>
 
-@push('dashboard_footer')
-    <div data-dashboard-sidebar-back></div>
-@endpush
+<div data-dashboard-sidebar-back></div>
