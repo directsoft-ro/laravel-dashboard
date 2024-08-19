@@ -1,31 +1,36 @@
 # Layout
 
-Create your layout page
-
-Empty layout
+Add styles and scripts to your master layout
 
 ```blade
-<!-- Example: layouts/app.blade.php -->
+<!DOCTYPE html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
-@extends('dashboard::layouts.app')
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="robots" content="noindex,nofollow">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <link rel="icon" type="image/png" href="{{ asset('favicon.png') }}">
+    @dashboardStyles
+</head>
 
-@section('dashboard_content')
-    <!-- You content here -->
-@endsection
+<body>
+    {{-- ... --}}
+
+    @dashboardScripts
+</body>
+
+</html>
 ```
 
 Layout with Header & Sidebar
 
 ```blade
-<!-- Example: layouts/app.blade.php -->
-
-@extends('dashboard::layouts.app')
-
-@section('dashboard_content')
-    <x-dashboard::header></x-dashboard::header>
-    <x-dashboard::sidebar></x-dashboard::sidebar>
-    <x-dashboard::main-content>
-        @yield('app_content')
-    </x-dashboard::main-content>
-@endsection
+<x-dashboard::header></x-dashboard::header>
+<x-dashboard::sidebar></x-dashboard::sidebar>
+<x-dashboard::main-content>
+    {{-- ... --}}
+</x-dashboard::main-content>
 ```
