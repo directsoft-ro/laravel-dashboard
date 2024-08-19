@@ -3,9 +3,10 @@
     'active' => false,
     'classActive' => 'active',
     'linkClass' => null,
+    'target' => null,
 ])
 <li {{ $attributes->class(['dashboard-sidebar-menu', $classActive => $active]) }}>
-    <a href="{{ $href }}" class="dashboard-sidebar-nav-item {{ $linkClass ? ' ' . $linkClass : '' }}">
+    <a href="{{ $href }}" class="dashboard-sidebar-nav-item {{ $linkClass ? ' ' . $linkClass : '' }}"{!! $target ? ' target="'.$target.'"' : '' !!}>
         <span class="dashboard-sidebar-item-content">
             @isset($icon)
                 <span class="dashboard-sidebar-icon">
