@@ -3,6 +3,7 @@ let mix = require("laravel-mix");
 mix.setResourceRoot("resources");
 mix.setPublicPath("public");
 mix.disableNotifications();
+mix.version();
 
 mix.options({
     processCssUrls: false,
